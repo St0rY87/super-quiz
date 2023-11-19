@@ -807,6 +807,9 @@ ul.test__dropdown-list_active {
 .slider-container {
     margin: 0 auto;
 }
+.swiper {
+    z-index: 0;
+}
 
 .swiper-button-next{
     right: 12%;
