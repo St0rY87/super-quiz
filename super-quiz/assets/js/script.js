@@ -55,14 +55,12 @@ function showBottomLine() {
     this.classList.toggle('show-bottom-line')
 }
 
-
 //show adaptive menu
 btnAdaptive.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
     adaptiveMenu.classList.toggle('active-menu');
 }
-
 
 //handle dropdown of test section
 dropDownTest.addEventListener('click', toggleDropDownTest);
@@ -86,7 +84,6 @@ function toggleDropDownTest() {
 
 
 //handle questions of test section
-
 function getTextCheckedInputs() {
     const answer = tabFirst.querySelector('.tabs__tab-answer');
     let text = '';
@@ -190,7 +187,6 @@ function handleTabs() {
     }
 }
 
-
 //handle modal windows
 
 btnHeader.forEach(btnHeader => {
@@ -278,7 +274,6 @@ function handleFiles() {
 }
 
 //swiper
-
 const swiper = new Swiper(".swiper", {
     slidesPerView: 5,
     slidesPerGroup: 1,
@@ -286,10 +281,6 @@ const swiper = new Swiper(".swiper", {
     loop: true,
     slideToClickedSlide: true,
     spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     breakpoints: {
         320: {
             slidesPerView: 1.5,
