@@ -1,0 +1,44 @@
+
+@font-face {
+    font-family: 'NeueMachina';
+    src: local('NeueMachina Bold'), local('NeueMachina-Bold'),
+        url('../fonts/NeueMachina-Bold.woff2') format('woff2'),
+        url('../fonts/NeueMachina-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'NeueMachina';
+    src: local('NeueMachina Ultrabold'), local('NeueMachina-Ultrabold'),
+        url('../fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
+        url('../fonts/NeueMachina-Ultrabold.woff') format('woff');
+    font-weight: 800;
+    font-style: Ultrabold;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Raleway';
+    src: local('Medium'), local('Raleway-Medium'),
+        url('../fonts/Raleway-Medium.woff2') format('woff2'),
+        url('../fonts/Raleway-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: Medium;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: local(' SemiBold'), local('Raleway-SemiBold'),
+        url('../fonts/Raleway-SemiBold.woff2') format('woff2'),
+        url('../fonts/Raleway-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: SemiBold;
+    font-display: swap;
+}
+
+
