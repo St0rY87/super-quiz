@@ -1,11 +1,5 @@
-//carousel
-const carousel = document.querySelector('.carousel');
-const leftArrow = document.querySelector('.carousel__button-left');
-const rightArrow = document.querySelector('.carousel__button-right');
-const carouselBtn = document.querySelectorAll('.carousel__button');
-const slides = Array.from(carousel.children);
-const gapCarousel = Number(getComputedStyle(carousel).getPropertyValue('gap').slice(0,2));
-let index = 0;
+
+
 ///////////header
 const menuItems = document.querySelectorAll('.header__nav-link_main');
 const btnAdaptive = document.querySelector('.btn_adaptive');
@@ -45,54 +39,6 @@ const btnThanks = modalThanks.querySelector('.btn_form');
 const fileSelector = document.querySelector('.form__input-files');
 const clipText = document.querySelector('.form__clip-text');
 
-
-const slideWidth = slides[0].getBoundingClientRect().width + gapCarousel; // 362
-const defaultTranslateX = getTranslateX();
-
-function getTranslateX() {
-    const style = getComputedStyle(carousel);
-    const matrix = new DOMMatrixReadOnly(style.transform); 
-    console.log(matrix.m41)
-    return matrix.m41;
-}
-
-function enableButtons() {
-    carouselBtn.forEach(btn => btn.disabled = false);
-}
-
-function moveLeft() {
-    document.querySelector('.carousel__button-right').disabled = true;
-    carousel.classList.remove('transition');
-    const newSlide = carousel.firstElementChild.cloneNode(true);
-    carousel.firstElementChild.remove();
-    newSlide.classList.add('new-slide');
-    carousel.append(newSlide);
-    carousel.style.transform = `translateX(${getTranslateX() + slideWidth}px)`;
-    setTimeout(()=>{
-        carousel.classList.add('transition');
-        carousel.style.transform = `translateX(${getTranslateX() - slideWidth}px)`;    
-    },'1');
-}
-
-
-function moveRight() {
-    document.querySelector('.carousel__button-left').disabled = true;
-    carousel.classList.remove('transition');
-    const newSlide = carousel.lastElementChild.cloneNode(true);
-    carousel.lastElementChild.remove();
-    newSlide.classList.add('new-slide');
-    carousel.prepend(newSlide);
-    carousel.style.transform = `translateX(${getTranslateX() - slideWidth}px)`;
-    setTimeout(()=>{
-    carousel.classList.add('transition');
-    carousel.style.transform = `translateX(${getTranslateX() + slideWidth}px)`;
-},'1')
-}
-       
-
-carousel.addEventListener('transitionend', enableButtons);
-rightArrow.addEventListener('click', moveLeft);
-leftArrow.addEventListener('click', moveRight);
 
 
 ///handle menu of header 
@@ -331,3 +277,38 @@ function handleFiles() {
     checkImageSizes();
 }
 
+//swiper
+
+const swiper = new Swiper(".swiper", {
+    slidesPerView: 5,
+    slidesPerGroup: 1,
+    centeredSlides: false,
+    loop: true,
+    slideToClickedSlide: true,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+        },
+        576: {
+            slidesPerView: 3,
+            centeredSlides: false,
+        },
+        768: {
+            slidesPerView: 4,
+        },
+        1200: {
+            slidesPerView: 5,
+        },
+    },
+      // Navigation arrows
+navigation: {
+  nextEl: '.swiper-button-next',
+  prevEl: '.swiper-button-prev',
+},
+  });
