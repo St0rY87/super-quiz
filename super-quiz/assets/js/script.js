@@ -1,6 +1,4 @@
-
-
-///////////header
+///////////header variables
 const menuItems = document.querySelectorAll('.header__nav-link_main');
 const btnAdaptive = document.querySelector('.btn_adaptive');
 const dropDownTest = document.querySelector('.test__select');
@@ -8,6 +6,7 @@ const listDropDownItemsTest = document.querySelectorAll('.test__dropdown-item');
 const inputTest = document.querySelector('.test__opinion');
 const textSelectTest = document.querySelector('.test__select-option');
 const adaptiveMenu = document.querySelector('.header__content');
+const linksAdaptiveMenu = adaptiveMenu.querySelectorAll('.header__nav-link');
 ///section test variables
 const test = document.querySelector('.test');
 const btnsTest = test.querySelectorAll('.btn');
@@ -21,9 +20,10 @@ const tabSecond = test.querySelector('.tabs__tab_like');
 const tabThird = test.querySelector('.tabs__tab_thanks');
 const checkboxInputs = document.querySelectorAll('.test__options-input');
 const radioInputs = document.querySelectorAll('.test__options-input_radio');
-// modals
+// handle modals variables
 const label = document.querySelector('.form__clip');
 const main = document.querySelector('.main');
+const footer = document.querySelector('.footer');
 const overlay = document.querySelector('.overlay');
 const btnHeader = document.querySelectorAll('.btn_header-main');
 const close = document.querySelector('.cross_questionnaire');
@@ -58,8 +58,19 @@ function showBottomLine() {
 //show adaptive menu
 btnAdaptive.addEventListener('click', toggleMenu);
 
+
 function toggleMenu() {
     adaptiveMenu.classList.toggle('active-menu');
+    if(adaptiveMenu.classList.contains('active-menu')) {
+        linksAdaptiveMenu.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        })  
+    }
+    else {
+        linksAdaptiveMenu.forEach(link => {
+            link.removeEventListener('click', toggleMenu);
+        })
+    }
 }
 
 //handle dropdown of test section
@@ -200,6 +211,7 @@ btnForm.addEventListener('click', checkForm);
 function showModal() {
     overlay.classList.add('flex');
     main.classList.add('none');
+    footer.classList.add('none');
     adaptiveMenu.classList.remove('active-menu');
 }
 
@@ -207,6 +219,7 @@ function closeModal() {
     overlay.classList.remove('flex');
     modal.classList.remove('none');
     main.classList.remove('none');
+    footer.classList.remove('none');
     modalThanks.classList.add('none');
     form.reset();
     clipText.innerHTML = 'Приложить файлы';
@@ -273,13 +286,14 @@ function handleFiles() {
     checkImageSizes();
 }
 
+
 //swiper
 const swiper = new Swiper(".swiper", {
     slidesPerView: 5,
-    slidesPerGroup: 1,
+    // slidesPerGroup: 1,
     centeredSlides: false,
     loop: true,
-    slideToClickedSlide: true,
+    // slideToClickedSlide: true,
     spaceBetween: 10,
     breakpoints: {
         320: {
