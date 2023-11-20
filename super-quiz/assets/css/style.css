@@ -371,6 +371,7 @@ h2 {
     height: clamp(5.2rem, 16.5vw, 12.8rem);
     left: clamp(4rem, 12vw, 10.1rem);
     z-index: 2;
+    border-radius: 2rem;
 }
 
 .super-quiz__question-mark-left:nth-child(3) {
@@ -386,8 +387,8 @@ h2 {
 .super-quiz__question-mark-right:nth-child(1) {
     right: 0;
     height: clamp(9rem, 28vw, 22.625rem);
-
     z-index: 3;
+    border-radius: 2rem;
 
 }
 
@@ -1180,7 +1181,7 @@ ul.test__dropdown-list_active {
     .links-list__link:hover {
         color: var(--color-hover);
     }
-    
+
     .form__clip:hover{
         background-color: var(--color-hover);
     }
