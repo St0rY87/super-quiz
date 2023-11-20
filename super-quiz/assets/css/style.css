@@ -1047,7 +1047,14 @@ ul.test__dropdown-list_active {
     width: max-content;
     gap: 0.625rem;
     cursor: pointer;
+    transition: var(--transition-hover);
 }
+
+.form__clip:focus {
+    background-color: var(--color-hover);
+    outline: none;
+}
+
 .form__clip-text {
     display: block;
     width: max-content;
@@ -1172,6 +1179,10 @@ ul.test__dropdown-list_active {
     }
     .links-list__link:hover {
         color: var(--color-hover);
+    }
+    
+    .form__clip:hover{
+        background-color: var(--color-hover);
     }
 
     .btn_header {

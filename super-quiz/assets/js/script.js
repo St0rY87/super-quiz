@@ -281,6 +281,14 @@ function checkImageSizes() {
     }
 }
 
+label.addEventListener('focus', () => {
+    this.addEventListener('keypress', (event)=> {
+        if(event.key === 'Enter') {
+            label.click();
+        }
+    })
+})
+
 function handleFiles() {
     inputTextImages();
     checkImageSizes();
