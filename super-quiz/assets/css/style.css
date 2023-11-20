@@ -437,7 +437,6 @@ h2 {
     justify-content: center;
     flex-grow: 9999;
     margin-top: 1rem;
-    /* min-height: 39.625rem; */
     position: relative;
     z-index: 1;
 }
@@ -1138,6 +1137,7 @@ ul.test__dropdown-list_active {
     margin-top: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
 }
 
+
 @media (width > 1024px) {
 
     .header__nav-item:hover .header__nav-link {
@@ -1249,52 +1249,6 @@ ul.test__dropdown-list_active {
         height: 1.5rem;
         max-width:10.875rem;
         overflow: hidden;
-    }
-}
-
-@media(min-width: 320px) {
-    .slider-container-for-margin {
-        margin-inline: clamp(-3.625rem, -8.1562rem + 22.6563vw, 0rem);
-    }
-    .swiper-button-next{
-        display: none;
-    }
-    .swiper-button-prev{
-        display: none;
-    }
-    
-} 
-
-@media(max-width: 576px) {
-    .swiper-slide {
-        min-height: 32.625rem;
-    }
-} 
-@media(min-width: 576px) {
-    .slider-container-for-margin {
-        margin-inline: -10.3125rem;
-    }
-} 
-
-@media(min-width: 1024px) {
-    .slider-container-for-margin {
-        margin-inline: -10.3125rem;
-    }
-    .swiper-button-next{
-        display: flex;
-    }
-    .swiper-button-prev{
-        display: flex;
-    }
-} 
-
-@media(min-width: 1440px) {
-    .slider-container {
-        width: 1440px;
-      
-    }
-    .slider-container-for-margin {
-        margin: 0 -12.5%;
     }
 }
 
@@ -1443,7 +1397,11 @@ ul.test__dropdown-list_active {
     }
     
 }
+
 @media(max-width: 576px) {
+    .swiper-slide {
+        min-height: 32.625rem;
+    }
     .btn {
         border-radius: 0.5rem;
     }
@@ -1598,5 +1556,50 @@ ul.test__dropdown-list_active {
 
     .super-quiz__qestion-marks.super-quiz__qestion-marks_right {
         background-color: #331B6A;
+    }
+}
+
+
+
+/* media for swiper slider */
+@media(min-width: 320px) {
+    .slider-container-for-margin {
+        margin-inline: clamp(-3.625rem, -8.1562rem + 22.6563vw, 0rem);
+    }
+    .swiper-button-next{
+        display: none;
+    }
+    .swiper-button-prev{
+        display: none;
+    }
+} 
+
+
+@media(min-width: 576px) {
+    .slider-container-for-margin {
+        margin-inline: -10.3125rem;
+    }
+} 
+
+@media(min-width: 1024px) {
+    .slider-container-for-margin {
+        margin-inline: -10.3125rem;
+    }
+    .swiper-button-next{
+        display: flex;
+    }
+    .swiper-button-prev{
+        display: flex;
+    }
+} 
+
+
+@media(min-width: 1440px) {
+    .slider-container {
+        width: 1440px;
+      
+    }
+    .slider-container-for-margin {
+        margin: 0 -12.5%;
     }
 }
