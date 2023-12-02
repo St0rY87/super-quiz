@@ -1503,10 +1503,7 @@ ul.test__dropdown-list_active {
 }
 
 @media(max-width: 500px) {
-    .header__content {
-        right: -100vw;
-        width: 100vw;
-    }
+    
     .active-menu {
         right: 0;
     }
