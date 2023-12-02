@@ -112,7 +112,7 @@ h2 {
 }
 
 .btn_header {
-    display: none;
+    display: block;
 }
 
 .btn_white {
@@ -137,7 +137,7 @@ h2 {
 }
 
 .btn_adaptive {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.3125rem;
     width: clamp(8.3125rem, 7.4554rem + 4.2857vw, 11.3125rem);
@@ -155,7 +155,9 @@ h2 {
 .btn_adaptive:after {
     right: 20%;
 }
-
+.large-screen {
+    display: flex;
+}
 .header__wrapper:has(.active-menu) .btn_adaptive:before,
 .header__wrapper:has(.active-menu) .btn_adaptive:after {
     content: '';
@@ -1078,6 +1080,9 @@ ul.test__dropdown-list_active {
 .form__clip-text {
     display: block;
     width: max-content;
+    height: 1.5rem;
+    max-width:10.875rem;
+    overflow: hidden;
 }
 
 .form__clip_red {
@@ -1138,7 +1143,7 @@ ul.test__dropdown-list_active {
 }
 
 
-@media (width > 1024px) {
+@media (hover: hover) {
 
     .header__nav-item:hover .header__nav-link {
         background-color: var(--color-hover);
@@ -1206,14 +1211,6 @@ ul.test__dropdown-list_active {
         background-color: var(--color-hover);
     }
 
-    .btn_header {
-        display: block;
-    }
-
-    .btn_adaptive {
-        display: none;
-    }
-
     .btn_white:hover {
         border-color: var(--color-hover);
         color: var(--color-accent);
@@ -1227,31 +1224,7 @@ ul.test__dropdown-list_active {
     .cross:hover .cross__line {
         background-color: var(--color-accent);
     }
-
-    .header__nav {
-        display: block;
-    }
-
-    .header__content {
-        display: none;
-    }
-
-    .header__content {
-        display: none;
-    }
-
-    .large-screen {
-        display: flex;
-    }
-
-    .form__clip-text-inner {
-        display: block;
-        height: 1.5rem;
-        max-width:10.875rem;
-        overflow: hidden;
-    }
 }
-
 
 @media (max-width: 1340px) {
     .footer {
@@ -1357,6 +1330,7 @@ ul.test__dropdown-list_active {
     }
 
     .btn_adaptive {
+        display: flex;
         border-radius: 0.75rem;
         padding: 0.4375rem;
     }
@@ -1483,10 +1457,6 @@ ul.test__dropdown-list_active {
         padding-inline: 0.375rem;
     }
 
-    .form__clip_red {
-        font-size: 1rem;
-    }
-
     .form__file_red {
         bottom: -2.3125rem;
     }
@@ -1503,7 +1473,6 @@ ul.test__dropdown-list_active {
 }
 
 @media(max-width: 500px) {
-    
     .active-menu {
         right: 0;
     }
